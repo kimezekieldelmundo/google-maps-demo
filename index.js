@@ -27,13 +27,10 @@ function findNearbyRestos(category) {
   return new Promise(function (resolved) {
     service.textSearch(query, function (results, status, pagination) {
       if (status === google.maps.places.PlacesServiceStatus.OK && results) {
-        console.log(`results: ${results.length}`)
         allResults = allResults.concat(results)
         if (pagination && pagination.hasNextPage) {
-          console.log('has next page')
           pagination.nextPage()
         } else {
-          console.log(`allResults: ${allResults.length}`)
           resolved(allResults)
         }
       }
@@ -49,8 +46,6 @@ function filterByCategory(query) {
       function (result) {
         removeAllMarkers()
         addAllToMarkers(result)
-        // showAllMarkers()
-        console.log(window.googleMap)
       }
     )
 }
@@ -73,7 +68,6 @@ function infowindowContent(place) {
 
 
 function renderDirections(origin, destination) {
-  console.log(`render directions from ${origin} to ${destination}`)
   const request = {
     origin: origin,
     destination: destination,
@@ -90,9 +84,7 @@ function renderDirections(origin, destination) {
 
 function addAllToMarkers(places) {
   window.markers = []
-  console.log(`results to add: ${places.length}`)
   for (let place of places) {
-    // console.log(place)
     let marker = new google.maps.Marker({ position: place.geometry.location, map: window.googleMap, title: place.name })
 
     marker.addListener('click', () => {
