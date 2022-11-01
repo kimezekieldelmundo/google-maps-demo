@@ -19,7 +19,7 @@ function findNearbyRestos(category) {
     query: 'restaurant near Cebu City',
     bounds: window.cityBounds
   }
-  if (query != null) {
+  if (category != null) {
     query['query'] = category + ' near Cebu City'
   }
   var service = new google.maps.places.PlacesService(window.googleMap);
