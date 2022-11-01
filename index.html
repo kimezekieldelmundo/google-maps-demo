@@ -6,15 +6,16 @@
 -->
 <html>
   <head>
-    <title>Add Map</title>
+    <title>Cebu Restaurants</title>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="./style.css" />
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
     <script type="module" src="./index.js"></script>
   </head>
-  <body>
-    <h3>My Google Maps Demo</h3>
+  <body class="container text-center">
+    <h1 class="center">Google Maps Demo</h3>
     <!--The div element for the map -->
     <div id="map"></div>
 
@@ -25,9 +26,14 @@
      with https://www.npmjs.com/package/@googlemaps/js-api-loader.
     -->
     <div>
-      <button id="price-range-all" class="resto-type-filter">Italian Restaurant</button>
-      <button id="price-range-all" class="resto-type-filter">Halal Restaurant</button>
-
+      <h2>Filter by Category</h2>
+      <button id="reset-filter" class="btn btn-primary">Reset</button>
+      <button class="resto-type-filter btn btn-primary">Italian Restaurant</button>
+      <button class="resto-type-filter btn btn-primary">Halal Restaurant</button>
+    </div>
+    <div>
+      <h2>Navigation</h2>
+      <button id="reset-navigation" class="btn btn-primary" >Reset Navigation</button>
     </div>
     <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhy8P5MSVbj-5Dbq4Nr0HnSPrCZzwbQmU&libraries=places&callback=initMap&v=weekly"
